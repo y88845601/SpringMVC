@@ -1,0 +1,48 @@
+package com.xxy.demo.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectProvider;
+import org.springframework.stereotype.Repository;
+
+import com.xxy.demo.bean.TUser;
+import com.xxy.demo.dao.provider.UserDaoProvider;
+
+@Repository("userDao")
+public interface IUserDao {
+	
+	/**
+	 * 根据手机号、密码查询会员信息
+	 * @author xingyuan
+	 * @date 2016-3-7
+	 *-----------------------
+	 * @param mobile 手机号
+	 * @param pwd 密码
+	 * @return
+	 */
+	@SelectProvider(type=UserDaoProvider.class,method="getTUserByPwd")
+	public TUser findTUserByPwd(@Param("mobile")Long mobile,@Param("pwd")String pwd);
+	
+	/**
+	 * 根据ID查询会员信息
+	 * @author xingyuan
+	 * @date 2016-3-7
+	 *-----------------------
+	 * @param id 会员ID
+	 * @return
+	 */
+	@SelectProvider(type=UserDaoProvider.class,method="getTUserById")
+	public TUser findTUserById(String id);
+	
+	/**
+	 * 查询所有会员列表
+	 * @author xingyuan
+	 * @date 2016-3-7
+	 *-----------------------
+	 * @return
+	 */
+	@Select("SELECT * FRFOM T_USER T")//该处可以加where条件
+	public List<TUser> getTUser();
+}

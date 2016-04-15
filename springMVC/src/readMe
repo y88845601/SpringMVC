@@ -1,0 +1,10 @@
+目录介绍:
+com.xxy.demo.controller  控制层方法
+com.xxy.demo.service  业务层接口
+com.xxy.demo.service.impl  业务层接口实现
+com.xxy.demo.dao  持久层
+com.xxy.demo.dao.provider  提供持久层的语句(mybits没有持久层的实现层,存在业务逻辑的可以在该处写)
+com.xxy.demo.bean  存放数据库对应的bean类
+
+com.xxy.common  存放自定义的bean类
+com.xxy.filter  过滤器、拦截器
