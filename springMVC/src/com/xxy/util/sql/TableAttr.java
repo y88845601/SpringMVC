@@ -11,6 +11,8 @@ import com.xxy.util.DateUtil;
 import com.xxy.util.SmallMethods;
 
 
+
+
 /**
  * SQL语句处理<br>
  * 使用该方法必须保证数据库字段名与bean中的变量名一致
@@ -160,7 +162,7 @@ public class TableAttr {
 			if(val != null){
 				sb.append(sname.toUpperCase() + " = ");
 				if("String".equals(stype)){
-					sb.append("'"+(String)val + "',");
+					sb.append("'"+String.valueOf(val) + "',");
 				}else if("Long".equals(stype)){
 					sb.append((Long)val + ",");
 				}else if("Integer".equals(stype)){
@@ -168,13 +170,13 @@ public class TableAttr {
 				}else if("Date".equals(stype)){
 					sb.append("'"+DateUtil.dateToStr((Date)val, "yyyy-MM-dd HH:mm:ss")+"',");
 				}else{
-					sb.append("'"+(String)val + "',");
+					sb.append("'"+String.valueOf(val) + "',");
 				}
 				//where条件
 				if(Arrays.asList(whstr).contains(sname)){
 					w.append(sname.toUpperCase()+" = ");
 					if("String".equals(stype)){
-						w.append("'"+(String)val + "'");
+						w.append("'"+String.valueOf(val) + "'");
 					}else if("Long".equals(stype)){
 						w.append((Long)val);
 					}else if("Integer".equals(stype)){
@@ -182,7 +184,7 @@ public class TableAttr {
 					}else if("Date".equals(stype)){
 						w.append("'"+DateUtil.dateToStr((Date)val, "yyyy-MM-dd HH:mm:ss")+"'");
 					}else{
-						w.append("'"+(String)val + "'");
+						w.append("'"+String.valueOf(val) + "'");
 					}
 					w.append(" AND ");
 				}
@@ -240,7 +242,7 @@ public class TableAttr {
 			if(val != null){
 				sbkey.append(sname.toUpperCase() + ",");
 				if("String".equals(stype)){
-					sbval.append("'"+(String)val + "',");
+					sbval.append("'"+String.valueOf(val) + "',");
 				}else if("Long".equals(stype)){
 					sbval.append((Long)val + ",");
 				}else if("Integer".equals(stype)){
@@ -248,7 +250,7 @@ public class TableAttr {
 				}else if("Date".equals(stype)){
 					sbval.append("'"+DateUtil.dateToStr((Date)val, "yyyy-MM-dd HH:mm:ss")+"',");
 				}else{
-					sbval.append((String)val + ",");
+					sbval.append(String.valueOf(val) + ",");
 				}
 			}
 		}
