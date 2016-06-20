@@ -9,6 +9,19 @@ package com.xxy.util;
 public class SmallMethods {
 	
 	/**
+	 * 获取项目的根目录
+	 * 修改者名字   xxy
+	 * 修改日期   2016-4-11
+	 * 修改内容
+	 * @param @param request
+	 * @param @return
+	 * @return String
+	 */
+	public static String getRootPath(HttpServletRequest request){
+		return request.getSession().getServletContext().getRealPath("");
+	}
+	
+	/**
 	 * 获取请求者的IP
 	 * 修改者名字   xxy
 	 * 修改日期   2016-4-11
