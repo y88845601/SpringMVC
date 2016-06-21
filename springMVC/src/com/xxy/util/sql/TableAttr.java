@@ -278,7 +278,6 @@ public class TableAttr {
 		System.out.println(getUpdateSql(tuser.getClass(), obj));
 		System.out.println(getMySqlUpdateSql(tuser.getClass(),obj));
 		System.out.println(getUpdateSql(tuser.getClass(), obj,"id"));
-		测试
 		*/
 		System.out.println(getUpdateSql(tuser.getClass(), obj,new String[]{"mobile","id"}));
 	}

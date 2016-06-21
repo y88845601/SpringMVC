@@ -1,5 +1,12 @@
 package com.xxy.util;
 
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+import java.util.Properties;
+
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 小方法集
  * @author xingyuan

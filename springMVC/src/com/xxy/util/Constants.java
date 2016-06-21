@@ -1,6 +1,5 @@
 package com.xxy.util;
 
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * 项目中出现的常量
@@ -10,6 +9,6 @@ import javax.servlet.http.HttpServletRequest;
  * @version V1.0
  */
 public class Constants{
-  /** API配置文件的路径(相对于根目录的位置) */
+	/** API配置文件的路径(相对于根目录的位置) */
 	public static final String propertiesURL = "/api.properties";
 }
